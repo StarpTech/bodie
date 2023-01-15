@@ -1,0 +1,15 @@
+# https://countries.trevorblades.com/
+
+query Countries($code: String!) {
+  countries_countries(filter: { code: { eq: $code } }) {
+    code
+    name
+    capital
+    currency
+    languages {
+      name
+    }
+    emoji
+    emojiU
+  }
+}

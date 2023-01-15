@@ -1,11 +1,36 @@
+import { useQuery } from '@bodie/api';
+import { signIn, useSession } from 'next-auth/react';
 import styles from './index.module.css';
 
 export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
+  const { data: session } = useSession();
+
+  const { data, isLoading, error } = useQuery({
+    operationName: 'Countries',
+    input: {
+      code: 'US',
+    },
+  });
+
+  if (!session) {
+    return (
+      <div>
+        <p>You are not signed in</p>
+        <button onClick={() => signIn()}>Sign in</button>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  console.log(JSON.stringify(data));
+
   return (
     <div className={styles.page}>
       <div className="wrapper">
