@@ -1,4 +1,4 @@
-import { useQuery } from '@bodie/api';
+import { useQuery } from '@bodie/data-access';
 import { signIn, useSession } from 'next-auth/react';
 import styles from './index.module.css';
 

@@ -29,7 +29,7 @@ configureWunderGraphApplication({
     },
     {
       templates: [templates.typescript.client],
-      path: '../../libs/api/src/lib/generated-wundergraph',
+      path: '../../libs/data-access/src/lib/generated-wundergraph',
     },
   ],
   cors: {
