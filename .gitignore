@@ -52,4 +52,4 @@ Thumbs.db
 *.env
 *.env.*
 !example*.env
-libs/data-access/src/lib/generated-wundergraph/
+
