@@ -38,14 +38,13 @@ configureWunderGraphApplication({
       process.env.NODE_ENV === 'production'
         ? [
             // change this before deploying to production to the actual domain where you're deploying your app
-            'http://localhost:4200',
+            new EnvironmentVariable('WG_ALLOWED_ORIGIN'),
           ]
         : [
             'http://localhost:4200',
             'http://127.0.0.1:4200/',
             'http://localhost:9991',
             'http://127.0.0.1:9991',
-            new EnvironmentVariable('WG_ALLOWED_ORIGIN'),
           ],
   },
   dotGraphQLConfig: {
