@@ -59,6 +59,5 @@
       }
     }
   },
-  "tags": [],
-  "implicitDependencies": ["data-access"]
+  "tags": []
 }

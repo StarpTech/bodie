@@ -20,5 +20,6 @@
       }
     }
   },
-  "tags": ["api"]
+  "tags": ["api"],
+  "implicitDependencies": ["api"]
 }
