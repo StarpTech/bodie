@@ -29,12 +29,11 @@ export function Index() {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log(JSON.stringify(data));
-
   return (
     <div className={styles.page}>
       <div className="wrapper">
         <div className="container">
+          <pre>{JSON.stringify(data, null, 2)}</pre>
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
