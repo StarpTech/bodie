@@ -42,7 +42,7 @@ configureWunderGraphApplication({
           ]
         : [
             'http://localhost:4200',
-            'http://127.0.0.1:4200/',
+            'http://127.0.0.1:4200',
             'http://localhost:9991',
             'http://127.0.0.1:9991',
           ],
@@ -54,7 +54,11 @@ configureWunderGraphApplication({
     tokenBased: {
       providers: [
         {
-          userInfoEndpoint: 'http://localhost:4200/api/auth/session',
+          userInfoEndpoint:
+            process.env.NODE_ENV === 'production'
+              ? new EnvironmentVariable('WG_ALLOWED_ORIGIN') +
+                '/api/auth/session'
+              : 'http://localhost:4200/api/auth/session',
         },
       ],
     },
