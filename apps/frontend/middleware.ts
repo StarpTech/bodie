@@ -22,6 +22,7 @@ export function middleware(request: NextRequest) {
   // add the token to the Authorization header
   const headers = new Headers({
     Authorization: `Bearer ${token}`,
+    Credentials: 'include',
   });
 
   // rewrite the request to the WunderGraph API
