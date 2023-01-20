@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bodie/data-access": ["libs/data-access/src/index.ts"]
+      "@bodie/data-access": ["libs/data-access/src/index.ts"],
+      "@bodie/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

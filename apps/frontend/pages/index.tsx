@@ -2,12 +2,6 @@ import { useQuery } from '@bodie/data-access';
 import { signIn, useSession } from 'next-auth/react';
 import styles from './index.module.css';
 
-console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
-console.log(process.env.VERCEL_URL);
-console.log(process.env.NEXTAUTH_URL);
-console.log(process.env.NEXT_PUBLIC_NEXTAUTH_URL);
-console.log(process.env.NEXT_PUBLIC_URL);
-
 export function Index() {
   const { data: session } = useSession();
 

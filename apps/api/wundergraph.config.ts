@@ -35,10 +35,12 @@ configureWunderGraphApplication({
   cors: {
     ...cors.allowAll,
     allowedOrigins:
-      process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
+      process.env.NODE_ENV === 'production'
         ? [
             // change this before deploying to production to the actual domain where you're deploying your app
-            new EnvironmentVariable('NEXT_PUBLIC_VERCEL_URL'),
+            new EnvironmentVariable(
+              `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+            ),
           ]
         : [
             'http://localhost:4200',
@@ -56,8 +58,9 @@ configureWunderGraphApplication({
         {
           userInfoEndpoint:
             process.env.NODE_ENV === 'production'
-              ? new EnvironmentVariable('NEXT_PUBLIC_VERCEL_URL') +
-                '/api/auth/session'
+              ? new EnvironmentVariable(
+                  `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+                ) + '/api/auth/session'
               : 'http://localhost:4200/api/auth/session',
         },
       ],
