@@ -41,6 +41,7 @@ configureWunderGraphApplication({
             new EnvironmentVariable(
               `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
             ),
+            'https://bodie.vercel.app/',
           ]
         : [
             'http://localhost:4200',
