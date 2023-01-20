@@ -59,7 +59,7 @@ configureWunderGraphApplication({
         {
           userInfoEndpoint:
             process.env.NODE_ENV === 'production'
-              ? new EnvironmentVariable(NEXTAUTH_URL) + '/api/auth/session'
+              ? 'https://bodie.vercel.app/' + '/api/auth/session'
               : 'http://localhost:4200/api/auth/session',
         },
       ],
