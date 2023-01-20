@@ -4,7 +4,7 @@ import { createHooks } from '@wundergraph/react-query';
 
 const getDeploymentUrl = () => {
   if (typeof window === 'undefined') {
-    return 'http://localhost:4200';
+    return 'Not available on server side';
   }
   return window.location.origin;
 };
