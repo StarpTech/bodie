@@ -59,9 +59,7 @@ configureWunderGraphApplication({
         {
           userInfoEndpoint:
             process.env.NODE_ENV === 'production'
-              ? new EnvironmentVariable(
-                  `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-                ) + '/api/auth/session'
+              ? new EnvironmentVariable(NEXTAUTH_URL) + '/api/auth/session'
               : 'http://localhost:4200/api/auth/session',
         },
       ],
