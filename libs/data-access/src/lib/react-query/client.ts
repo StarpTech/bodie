@@ -10,10 +10,8 @@ const getDeploymentUrl = () => {
 };
 
 export const client = createClient({
-  baseURL: getDeploymentUrl() + '/api/wq',
+  baseURL: getDeploymentUrl() + '/api/wg',
 });
-
-console.log(getDeploymentUrl() + '/api/wq');
 
 export const {
   useQuery,
